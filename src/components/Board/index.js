@@ -11,16 +11,19 @@ const StyledBoardContainer = styled(Container)(({ theme }) => ({
     paddingLeft: theme.spacing(5),
     marginTop: theme.spacing(8),
     marginBottom: theme.spacing(8),
-    boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1)',
-    // backgroundColor: 'rgb(200, 200, 200, 0.1)',
-    backgroundColor: '#fff',
-  }));
 
-export default function BoardContainer({children}) {
+}));
+
+export default function BoardContainer({ children }) {
     const matches = useMediaQuery('(min-width:900px)')
-    StyledBoardContainer.boxShadow = 'none'
     return (
-        <StyledBoardContainer maxWidth="md">
+        <StyledBoardContainer
+            maxWidth="md"
+            sx={{
+                boxShadow: matches ? "0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1)" : "none",
+                backgroundColor: matches ? "rgb(200, 200, 200, 0.1)" : "#fff"
+            }}
+        >
             {children}
         </StyledBoardContainer>
     )

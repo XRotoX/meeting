@@ -16,9 +16,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-export default function TimePicker(props) {
+export default function TimePickerDep(props) {
     const classes = useStyles()
-    const { values, dispatch, setActiveStep } = props
+    const { values, dispatch } = props
 
     const handleChange = (value) => {
         dispatch({

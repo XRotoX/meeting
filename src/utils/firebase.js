@@ -4,21 +4,18 @@ import "firebase/firestore"
 // Don't steel my credentials :(
 // They are kept just for demo purposes
 const app = firebase.initializeApp({
-    apiKey: "AIzaSyAPSH6j99d6SiO0Ugft8lk_gMlnabqLJ3U",
-    authDomain: "flagquiz-42492.firebaseapp.com",
-    databaseURL: "https://flagquiz-42492.firebaseio.com",
-    projectId: "flagquiz-42492",
-    storageBucket: "flagquiz-42492.appspot.com",
-    messagingSenderId: "847220430562",
-    appId: "1:847220430562:web:2d5d9b31ae31816b6670bb",
-    measurementId: "G-FPQ4BMTJLN"
+    apiKey: "AIzaSyDPe3q9UmQPpq9KYtwACeeLaWywYY0ZJFE",
+    authDomain: "meeting-6cf36.firebaseapp.com",
+    projectId: "meeting-6cf36",
+    storageBucket: "meeting-6cf36.appspot.com",
+    messagingSenderId: "66211141181",
+    appId: "1:66211141181:web:149f235b953f6f3c96bc54",
+    measurementId: "G-ZPKYDZE8ND" 
 });
 
 const fireDB = app.firestore()
 export const database = {
-    folders: fireDB.collection('folders'),
-    files: fireDB.collection('files'),
-    users: fireDB.collection('users'),
+    reservations: fireDB.collection('reservations'),
     formatDoc: doc => {
         return { id: doc.id, ...doc.data() }
     },

@@ -5,12 +5,13 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns'
 import LocalizationProvider from '@mui/lab/LocalizationProvider'
 import StaticDatePicker from '@mui/lab/StaticDatePicker'
 import { ACTIONS } from '../../utils/useForm'
-import './date.css'
 
-export default function DatePicker(props) {
+export default function DatePickerDep(props) {
     const { values, dispatch, setActiveStep } = props
 
+
     const handleChange = (value) => {
+
         dispatch({
             type: ACTIONS.SET_ITEM,
             payload: {
@@ -25,13 +26,14 @@ export default function DatePicker(props) {
         <StaticDatePicker orientation="landscape"
             openTo="day"
             value={values.date}
-            disablePast shouldDisableDate={isSunday}
+            disablePast 
+            shouldDisableDate={isSunday}
             onChange={
                 (newValue) => {
                     handleChange(newValue)
                 }
             }
-            maxDate={new Date("12/29/21")}
+            maxDate={new Date("12/12/22")}
             renderInput={
                 (params) => < TextField {...params}
                 />} />

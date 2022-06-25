@@ -28,14 +28,13 @@ export function useForm() {
     const [state, dispatch] = useReducer(reducer, {
         date: new Date(),
         time: new Date(),
-        timezone: '',
+        timeFormatted: new Date(),
+        timezone: new Date().getTimezoneOffset(),
         firstName: '',
         lastName: '',
         email: '',
-        company: '',
+        message: '',
     })
-
-    console.log(state);
 
     return [state, dispatch]
 }
